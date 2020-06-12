@@ -1,0 +1,51 @@
+﻿
+@import "settings";
+@import "utils";
+
+.mimagemap
+{
+    @include pos-rel(1);
+    @extend .clr;
+
+    img{display: block;}
+
+    .image-fake
+    {
+        @include pos-rel(1);
+
+        display: block;
+    }
+
+    canvas
+    {
+        @include pos-abs(2);
+
+        display: block;
+    }
+
+    .image-main
+    {
+        @include pos-abs(3);
+
+        display: block;
+    }
+    
+} // .mimagemap
+
+.imagemap-tooltip
+{
+    @include pos-abs(99);
+    @include font('HelveticaNeueRegular', 14px, #fff);
+
+    display:        none;
+    float:          left;
+    font-style:     italic;
+    left:           0;
+    top:            0;
+    border-radius:  5px;
+    padding:        3px 10px;
+    line-height:    120%;
+    text-transform: capitalize;
+    background:     rgba( 0, 0, 0, 0.5 );
+
+} // .imagemap-tooltip

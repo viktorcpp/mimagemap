@@ -1,0 +1,67 @@
+﻿
+.clr
+{
+    &:after
+    {
+	    content:    " ";
+	    display:    block;
+	    height:     0px;
+	    clear:      both;
+	    visibility: hidden;
+    }
+}
+
+@mixin border-radius($radius)
+{
+    border-radius:         $radius;
+    -moz-border-radius:    $radius;
+    -webkit-border-radius: $radius;
+    -o-border-radius:      $radius;
+    -ms-border-radius:     $radius;
+}
+
+@mixin pos-rel($zindex, $left:-1, $top:-1)
+{
+    @include __pos_helper( $zindex, $left, $top );
+
+    position: relative;
+}
+
+@mixin pos-abs($zindex, $left:-1, $top:-1)
+{
+    @include __pos_helper( $zindex, $left, $top );
+
+    position: absolute;
+}
+
+@mixin __pos_helper($zindex, $left:-1, $top:-1)
+{
+    z-index:  $zindex;
+
+    @if $left != -1
+    {
+        left: $left;
+    }
+
+    @if $top != -1
+    {
+        top: $top;
+    }
+}
+
+@mixin font_helv_neue_reg($size, $color:-1)
+{
+    @include font( 'HelveticaNeueRegular', $size, $color );
+}
+
+@mixin font($family, $size, $color:-1)
+{
+    font-family: $family;
+    font-size:   $size;
+    font-weight: normal;
+
+    @if $color != -1
+    {
+        color: $color;
+    }
+}

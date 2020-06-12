@@ -1,0 +1,9 @@
+*.sln
+*.suo
+/.sass-cache
+/node_modules
+/.idea
+/package-lock.json
+/dev
+/develop
+/debug

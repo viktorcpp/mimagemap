@@ -1,0 +1,111 @@
+﻿/*** RESET ***/
+@import "reset";
+
+/*** SETTINGS ***/
+@import "settings";
+
+/*** FONTS ***/
+@import "fonts";
+
+/*** UTILS ***/
+@import "utils";
+
+@import "mimagemap";
+
+
+body
+{
+    @include font('HelveticaNeueRegular', 12px, #000);
+    padding: 50px 0 120px;
+}
+
+.console
+{
+    @include font('HelveticaNeueRegular', 12px, #00ff00);
+
+    width:       100%;
+    height:      120px;
+    overflow:    hidden;
+    position:    fixed;
+    z-index:     100;
+    top:         auto;
+    left:        0;
+    bottom:      0;
+    background:  none #000;
+    padding:     0;
+    line-height: 120%;
+
+    & > div
+    {
+        @include pos-rel(1);
+
+        top:           10px;
+        height:        100px;
+        padding:       0 10px;
+        overflow-x:    hidden;
+        overflow-y:    scroll;
+        text-overflow: ellipsis;
+        width:         auto;
+        float:         none;
+        white-space:   nowrap;
+    }
+}
+
+.demo-controls
+{
+    @include font('HelveticaNeueRegular', 14px, #000);
+
+    padding: 10px 20px;
+
+    a
+    {
+        display:         inline-block;
+        margin:          0 20px 0 0;
+        text-decoration: none;
+        color:           #000;
+
+        &:hover
+        {
+            text-decoration: underline;
+        }
+    }
+
+    .resizer
+    {
+        input[type=text]
+        {
+            @include font('HelveticaNeueRegular', 14px, #000);
+
+            width:       100px;
+            height:      24px;
+            line-height: 24px;
+            border:      1px solid #000;
+            padding:     0 4px;
+        }
+    }
+}
+
+.resizer
+{
+    padding: 12px 0 0;
+}
+
+.states
+{
+    @extend .clr;
+
+    padding: 12px 0 0;
+
+    & > div:first-child
+    {
+        float:      left;
+        width:      200px;
+        text-align: center;
+    }
+
+    select
+    {
+        display: inline-block;
+    }
+}
+
